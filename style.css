@@ -231,6 +231,16 @@ hr {
   grid-template-columns: 1fr;
 }
 
+.project-video-scaled,
+.project-media-scaled {
+  width: 75%;
+  justify-self: start;
+}
+
+.project-media-scaled img {
+  width: 100%;
+}
+
 .project-video-half {
   width: 50%;
 }
