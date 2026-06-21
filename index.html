@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal homepage of Zhipeng Tang, Ph.D. student at the School of Artificial Intelligence and Data Science, University of Science and Technology of China."
+    />
+    <title>Zhipeng Tang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="side-nav">
+      <nav aria-label="Page sections">
+        <a class="brand" href="#home">Zhipeng Tang</a>
+        <div class="nav-links">
+          <a href="#about"><span>♟</span>About</a>
+          <a href="#news"><span>▤</span>News</a>
+          <a href="#projects"><span>&lt;/&gt;</span>Projects</a>
+          <a href="#publications"><span>✎</span>Publications</a>
+          <a href="#experience"><span>▣</span>Experience</a>
+          <a href="#teaching"><span>TA</span>Teaching</a>
+        </div>
+      </nav>
+    </aside>
+    <main class="page">
+      <header class="masthead" id="home">
+        <h1>Zhipeng Tang</h1>
+      </header>
+
+      <div class="content-layout">
+        <div class="main-content">
+          <section id="about">
+            <h2>About</h2>
+            <p>
+              I am a Ph.D. student at the School of Artificial Intelligence and Data
+              Science, University of Science and Technology of China, advised by
+              Professor
+              <a href="https://faculty.ustc.edu.cn/zhangyanyong/zh_CN/index.htm">Yanyong Zhang</a>.
+            </p>
+            <p>
+              My research interests include <strong>embodied AI</strong> and
+              <strong>3D perception</strong>. I am interested in enabling
+              intelligent agents to perceive, understand, and interact with the
+              physical world.
+            </p>
+            <p class="email">Email: tangzhipeng{at}mail.ustc.edu.cn</p>
+          </section>
+
+      <hr />
+
+      <section id="news">
+        <h2>News</h2>
+        <div class="news-item">
+          <p class="news-title"><strong>ICML 2026, Spotlight</strong></p>
+          <p>
+            <a href="https://arxiv.org/pdf/2602.00780v1">Environment-Aware Adaptive Pruning with Interleaved Inference Orchestration for Vision-Language-Action Models</a>
+            is accepted as a spotlight paper. Code is coming soon!
+          </p>
+        </div>
+        <div class="news-item">
+          <p class="news-title"><strong>ACM MM 2025</strong></p>
+          <p>
+            <a href="https://dl.acm.org/doi/10.1145/3746027.3755730">VLMPlanner: Integrating Visual Language Models with Motion Planning</a>
+            is accepted to ACM MM 2025.
+          </p>
+        </div>
+        <div class="news-item">
+          <p class="news-title"><strong>DASFAA 2025</strong></p>
+          <p>
+            <a href="https://dlnext.acm.org/doi/abs/10.1007/978-981-95-3830-0_12">Killing two birds with one stone: A Spatio-Temporal Prompt for the Inductive Spatio-Temporal Extrapolation</a>
+            is accepted to DASFAA 2025.
+          </p>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <article class="project">
+          <div class="project-copy">
+            <h3>VLMPlanner: VLM-based Motion Planning for Autonomous Driving</h3>
+            <ul>
+              <li>Used vision-language models to reason about fine-grained traffic conditions from multi-view onboard images.</li>
+              <li>Designed a scene-complexity-aware inference mechanism to improve safety and robustness while reducing real-time computational overhead.</li>
+              <li>Validated the method with open-loop and closed-loop experiments in nuPlan.</li>
+            </ul>
+          </div>
+          <div class="project-media project-media-compact">
+            <img src="assets/images/vlmplanner_visualize.png" alt="VLMPlanner visualization" />
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-copy">
+            <h3>Unified 3D Latent and Action Diffusion Model</h3>
+            <ul>
+              <li>Jointly diffused 3D foundation model features and robot actions for geometry-aware action prediction.</li>
+              <li>Evaluated the approach in LIBERO and RoboTwin, and on UR5e and Kinova Gen3 real-robot platforms.</li>
+            </ul>
+          </div>
+          <div class="project-videos">
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/wam3d_ur5_grip.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play grip video">▶</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/wam3d_ur5_scoop.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play scoop video">▶</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/wam3d_ur5_dump.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play dump video">▶</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-copy">
+            <h3>Training-free and Plug-and-play Pruning for VLA Models</h3>
+            <ul>
+              <li>Designed a feature-similarity-based update policy to decide when sparse patterns should be refreshed across adjacent visual observations.</li>
+              <li>Introduced temporal-consistency feature aggregation to identify redundant channels more stably.</li>
+              <li>Scheduled pruning computation into VLA inference idle intervals and implemented sparse Linear layers with Triton.</li>
+              <li>Evaluated on OpenVLA-OFT, &pi;<sub>0.5</sub>, and CogACT across simulation and real-robot platforms.</li>
+            </ul>
+          </div>
+          <div class="project-media project-media-columns">
+            <div class="project-image-stack">
+              <img src="assets/images/ecovla_kinova_apple.png" alt="EcoVLA Kinova apple experiment" />
+              <img src="assets/images/ecovla_kinova_bottle.png" alt="EcoVLA Kinova bottle experiment" />
+              <img src="assets/images/ecovla_kinova_banana.png" alt="EcoVLA Kinova banana experiment" />
+            </div>
+            <div class="project-videos project-video-stack">
+              <div class="video-card">
+                <video playsinline preload="metadata">
+                  <source src="assets/images/ecovla_franka_pick.mp4" type="video/mp4" />
+                </video>
+                <button class="video-play" type="button" aria-label="Play Franka pick video">&#9658;</button>
+              </div>
+              <div class="video-card">
+                <video playsinline preload="metadata">
+                  <source src="assets/images/ecovla_franka_put.mp4" type="video/mp4" />
+                </video>
+                <button class="video-play" type="button" aria-label="Play Franka put video">&#9658;</button>
+              </div>
+              <div class="video-card">
+                <video playsinline preload="metadata">
+                  <source src="assets/images/ecovla_franka_stack.mp4" type="video/mp4" />
+                </video>
+                <button class="video-play" type="button" aria-label="Play Franka stack video">&#9658;</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-copy">
+            <h3>Dual-arm UR5e Robot Teleoperation and Model Deployment</h3>
+            <ul>
+              <li>Developed a teleoperation system for dual-arm UR5e robots using Meta Quest 3.</li>
+              <li>Deployed ACT, &pi;<sub>0</sub>, and related policy models.</li>
+            </ul>
+          </div>
+          <div class="project-videos project-video-stack">
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/dual_ur_pick.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play dual-arm pick video">&#9658;</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project-fast-videos" data-playback-rate="2">
+          <div class="project-copy">
+            <h3>Chemistry Embodied Manipulation Dataset and Benchmark</h3>
+            <ul>
+              <li>Developed a teleoperation and data-recording system using Manus gloves and VIVE Trackers for Franka arm and XHand control.</li>
+              <li>Designed atomic operations such as grasping, placing, pressing, shaking, and stirring for medium- and long-horizon tasks.</li>
+              <li>Migrated real-world scenes into Isaac Sim for scalable data collection.</li>
+            </ul>
+          </div>
+          <div class="project-videos project-video-stack project-video-half">
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_tele.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand teleoperation video">&#9658;</button>
+            </div>
+            <p class="media-caption">Manus Gloves and VIVE Tracker Teleoperation</p>
+          </div>
+          <h4 class="project-subheading">Atomic Operations</h4>
+          <div class="project-videos project-atom-grid">
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_1.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 1 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_2.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 2 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_3.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 3 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_4.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 4 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_5.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 5 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_6.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 6 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_7.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 7 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_8.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 8 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_9.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 9 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_10.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 10 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_11.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 11 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_12.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 12 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_13.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 13 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_14.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 14 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_atom_15.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand atom 15 video">&#9658;</button>
+            </div>
+          </div>
+          <h4 class="project-subheading">Medium-Horizon Tasks</h4>
+          <div class="project-videos project-medium-grid">
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_mid_1.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand medium-horizon task 1 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_mid_2.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand medium-horizon task 2 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_mid_3.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand medium-horizon task 3 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_mid_4.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand medium-horizon task 4 video">&#9658;</button>
+            </div>
+            <div class="video-card">
+              <video playsinline preload="metadata">
+                <source src="assets/images/franka_xhand_mid_5.mp4" type="video/mp4" />
+              </video>
+              <button class="video-play" type="button" aria-label="Play Franka XHand medium-horizon task 5 video">&#9658;</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <hr />
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <p class="pub-note"><sup>*</sup> Equal contribution</p>
+
+        <h3>In Submission</h3>
+        <article class="publication">
+          <div class="pub-copy">
+            <p class="pub-index">I1.</p>
+            <h5>
+              <a href="#">
+                Latent 3D World Model: Unified Latent 3D and Action Diffusion for Robotic Manipulation
+              </a>
+            </h5>
+            <p class="authors">
+              <strong>Zhipeng Tang<sup>*</sup></strong>, Guangting Zheng<sup>*</sup>,
+              Shaoxuan Wang<sup>*</sup>, Jiajun Deng, Sha Zhang, Sihang Chen,
+              Yu Sheng, Houqiang Li, Yanyong Zhang.
+            </p>
+          </div>
+          <a class="pub-image" href="#" aria-label="Latent 3D World Model paper">
+            <img src="assets/images/wam3d.png" alt="Latent 3D World Model overview" />
+          </a>
+        </article>
+
+        <h3>Conference</h3>
+
+        <article class="publication">
+          <div class="pub-copy">
+            <p class="pub-index">C3.</p>
+            <h5>
+              <a href="https://dlnext.acm.org/doi/abs/10.1007/978-981-95-3830-0_12">
+                Killing two birds with one stone: A Spatio-Temporal Prompt for the Inductive Spatio-Temporal Extrapolation
+              </a>
+            </h5>
+            <p class="authors">
+              Leilei Ding, <strong>Zhipeng Tang</strong>, Le Zhang, Dazhong Shen,
+              Chao Wang, Ziyang Tao, Jingbo Zhou, Yanyong Zhang, Hui Xiong.
+            </p>
+            <p class="venue">International Conference on Database Systems for Advanced Applications (DASFAA), 2025.</p>
+          </div>
+          <a
+            class="pub-image"
+            href="https://dlnext.acm.org/doi/abs/10.1007/978-981-95-3830-0_12"
+            aria-label="Spatio-Temporal Prompt paper"
+          >
+            <img src="assets/images/stp.png" alt="Spatio-Temporal Prompt overview" />
+          </a>
+        </article>
+
+        <article class="publication">
+          <div class="pub-copy">
+            <p class="pub-index">C2.</p>
+            <h5>
+              <a href="https://dl.acm.org/doi/10.1145/3746027.3755730">
+                VLMPlanner: Integrating Visual Language Models with Motion Planning
+              </a>
+            </h5>
+            <p class="authors">
+              <strong>Zhipeng Tang</strong>, Sha Zhang, Jiajun Deng, Chenjie Wang,
+              Guoliang You, Yuting Huang, Xinrui Lin, Yanyong Zhang
+            </p>
+            <p class="venue">ACM International Conference on Multimedia (MM), 2025.</p>
+          </div>
+          <a
+            class="pub-image"
+            href="https://dl.acm.org/doi/10.1145/3746027.3755730"
+            aria-label="VLMPlanner paper"
+          >
+            <img src="assets/images/vlmplanner.png" alt="VLMPlanner overview" />
+          </a>
+        </article>
+
+        <article class="publication">
+          <div class="pub-copy">
+            <p class="pub-index">C1.</p>
+            <h5>
+              <a href="https://arxiv.org/pdf/2602.00780v1">
+                Environment-Aware Adaptive Pruning with Interleaved Inference Orchestration for Vision-Language-Action Models
+              </a>
+            </h5>
+            <p class="authors">
+              Yuting Huang<sup>*</sup>, Leilei Ding<sup>*</sup>,
+              <strong>Zhipeng Tang<sup>*</sup></strong>, Zenghuan Zhu, Jiajun Deng,
+              Xinrui Lin, Shuo Liu, Haojie Ren, Jianmin Ji, Yanyong Zhang.
+            </p>
+            <p class="venue">
+              International Conference on Machine Learning (ICML), <strong>Spotlight</strong>, 2026.
+            </p>
+          </div>
+          <a
+            class="pub-image"
+            href="https://arxiv.org/pdf/2602.00780v1"
+            aria-label="EcoVLA paper"
+          >
+            <img src="assets/images/ecovla.png" alt="EcoVLA overview" />
+          </a>
+        </article>
+      </section>
+
+      <hr />
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <h3>Education</h3>
+        <div class="education-list">
+          <article class="education-entry">
+            <p class="education-date">2019.09-2023.06</p>
+            <div class="education-details">
+              <p class="education-school"><strong>University of Science and Technology of China</strong>, Hefei, China</p>
+              <p class="education-degree">B.S. in Computer Science and Technology</p>
+            </div>
+          </article>
+          <article class="education-entry">
+            <p class="education-date">2023.09-2025.06</p>
+            <div class="education-details">
+              <p class="education-school"><strong>University of Science and Technology of China</strong>, Hefei, China</p>
+              <p class="education-degree">M.S. in Computer Science and Technology</p>
+              <p class="education-advisor">Advisor: <a href="https://faculty.ustc.edu.cn/zhangyanyong/zh_CN/index.htm">Yanyong Zhang</a></p>
+            </div>
+          </article>
+          <article class="education-entry">
+            <p class="education-date">2025.09-Present</p>
+            <div class="education-details">
+              <p class="education-school"><strong>University of Science and Technology of China</strong>, Hefei, China</p>
+              <p class="education-degree">Ph.D. in Artificial Intelligence and Data Science</p>
+              <p class="education-advisor">Advisor: <a href="https://faculty.ustc.edu.cn/zhangyanyong/zh_CN/index.htm">Yanyong Zhang</a></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <div class="education-list">
+          <article class="education-entry">
+            <p class="education-date">2024 Spring</p>
+            <div class="education-details">
+              <p class="education-school"><strong>Teaching Assistant</strong></p>
+              <p class="education-degree">Computer Architecture (H), CS3002H.01</p>
+              <p class="education-advisor">University of Science and Technology of China</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <hr />
+
+        </div>
+      </div>
+    </main>
+    <script>
+      document.querySelectorAll(".video-card").forEach((card) => {
+        const video = card.querySelector("video");
+        const button = card.querySelector(".video-play");
+        const rateSource = card.closest("[data-playback-rate]");
+        const playbackRate = rateSource ? Number(rateSource.dataset.playbackRate) : 1;
+
+        if (Number.isFinite(playbackRate) && playbackRate > 0) {
+          video.defaultPlaybackRate = playbackRate;
+          video.playbackRate = playbackRate;
+        }
+
+        if (card.closest(".project-atom-grid, .project-medium-grid")) {
+          video.autoplay = true;
+          video.loop = true;
+          video.muted = true;
+          video.playbackRate = playbackRate;
+          video.play().catch(() => {});
+          card.classList.add("is-playing");
+          return;
+        }
+
+        const play = () => {
+          video.playbackRate = playbackRate;
+          video.play();
+          card.classList.add("is-playing");
+        };
+
+        const pause = () => {
+          video.pause();
+          card.classList.remove("is-playing");
+        };
+
+        button.addEventListener("click", play);
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            play();
+          } else {
+            pause();
+          }
+        });
+        video.addEventListener("ended", () => card.classList.remove("is-playing"));
+      });
+    </script>
+  </body>
+</html>

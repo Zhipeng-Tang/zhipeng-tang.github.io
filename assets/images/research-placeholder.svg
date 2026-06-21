@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Research image placeholder">
+  <rect width="400" height="300" fill="#f4f6f8"/>
+  <path d="M70 215 165 105l68 76 44-52 53 86H70Z" fill="#d9e3ea"/>
+  <circle cx="286" cy="86" r="28" fill="#bfd3df"/>
+  <rect x="70" y="232" width="260" height="10" rx="5" fill="#cad5dc"/>
+</svg>
