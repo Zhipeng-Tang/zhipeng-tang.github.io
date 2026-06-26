@@ -90,12 +90,13 @@
           <div class="project-copy">
             <h3>VLMPlanner: VLM-based Motion Planning for Autonomous Driving</h3>
             <ul>
-              <li>Used vision-language models to reason about fine-grained traffic conditions from multi-view onboard images.</li>
-              <li>Designed a scene-complexity-aware inference mechanism to improve safety and robustness while reducing real-time computational overhead.</li>
+              <li>Leveraged VLA models to understand fine-grained traffic conditions from multi-view onboard images, guiding the planner toward safer, more robust decisions.</li>
+              <li>Constructed DriveVQA and ReasoningVQA, two multi-view image-text datasets with 50K+ samples from nuPlan, improving VLM understanding of driving instructions, trajectories, control signals, and traffic-scene reasoning.</li>
+              <li>Designed a scene-complexity-aware mechanism that dynamically adjusts VLM inference frequency, improving safety and robustness while reducing computational overhead for real-time driving.</li>
               <li>Validated the method with open-loop and closed-loop experiments in nuPlan.</li>
             </ul>
           </div>
-          <div class="project-media project-media-compact project-media-scaled">
+          <div class="project-media project-media-compact project-media-wide">
             <img src="assets/images/vlmplanner_visualize.png" alt="VLMPlanner visualization" />
           </div>
         </article>

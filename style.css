@@ -237,6 +237,12 @@ hr {
   justify-self: start;
 }
 
+.project-media-wide {
+  width: 85%;
+  justify-self: start;
+}
+
+.project-media-wide img,
 .project-media-scaled img {
   width: 100%;
 }
